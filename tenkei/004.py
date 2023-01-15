@@ -26,8 +26,8 @@ for _ in range(H):
 row_sum = [0] * W
 col_sum = [0] * H
 for i in range(H):
-    col_sum[i] = sum(A[i])
     for j in range(W):
+        col_sum[i] += A[i][j]
         row_sum[j] += A[i][j]
 
 ans = [[0] * W for _ in range(H)]
@@ -35,8 +35,8 @@ for i in range(H):
     for j in range(W):
         ans[i][j] = row_sum[j] + col_sum[i] - A[i][j]
 
-for an in ans:
-    print(*an)
+for a in ans:
+    print(*a)
 
 
 
